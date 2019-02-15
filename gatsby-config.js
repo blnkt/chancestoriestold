@@ -37,7 +37,7 @@ module.exports = {
         // This is the field under which it's accessible
         fieldName: "swapi",
         // URL to query from
-        url: "https://api.graphcms.com/simple/v1/swapi",
+        url: "https://api.graphcms.com/simple/v1/swapi"
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
