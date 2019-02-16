@@ -1,0 +1,154 @@
+.person {
+  $triangleDimension: 16px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  padding-bottom: 20px;
+  transition: opacity $durationSlow $timing;
+
+  // Two Up
+  @include respond($break30) {
+    width: calc(100% / 2);
+
+    // Right
+    &:nth-of-type(2n+2) {
+      .details {
+        margin-left: -100%;
+      }
+
+      .details-inner::before {
+        left: calc(75% - #{$triangleDimension}) !important;
+      }
+    }
+
+    // Left
+    &:nth-of-type(2n+3) {
+      .details-inner::before {
+        left: calc(25% - #{$triangleDimension}) !important;
+      }
+    }
+  }
+
+  // Three Up
+  @include respond($break70) {
+    width: calc(100% / 3);
+
+    // Middle
+    &:nth-of-type(3n+2) {
+      .details {
+        margin-left: -100%;
+      }
+
+      .details-inner::before {
+        left: calc(50% - #{$triangleDimension}) !important;
+      }
+    }
+
+    // Right
+    &:nth-of-type(3n+3) {
+      .details {
+        margin-left: -200%;
+      }
+
+      .details-inner::before {
+        left: calc((5 * (100% / 6)) - #{$triangleDimension}) !important;
+      }
+    }
+
+    // Left
+    &:nth-of-type(3n+4) {
+      .details {
+        margin-left: 0;
+      }
+
+      .details-inner::before {
+        left: calc((100% / 6) - #{$triangleDimension}) !important;
+      }
+    }
+  }
+
+  &:hover {
+    .summary {
+      transform: scale(1.1);
+    }
+  }
+
+  &.open {
+    .details {
+      max-height: 400px;
+
+      // .details-inner {
+      //   opacity: 1 !important;
+      //   transition: opacity $durationSlow $timing;
+      // }
+    }
+  }
+
+  .summary {
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+    transition: transform $duration $timing;
+
+    @include respond($break70) {
+      padding: 20px;
+    }
+
+    img {
+      border-radius: 50%;
+      width: 100%;
+    }
+  }
+
+  .details {
+    position: relative;
+    width: 100%;
+    max-height: 0;
+    margin-left: 0;
+    overflow: hidden;
+    background-color: $white;
+    transition: max-height $durationSlow $timing;
+
+    @include respond($break30) {
+      width: 200%;
+    }
+
+    @include respond($break70) {
+      width: 300%;
+    }
+
+    .details-inner {
+      position: relative;
+      padding: 20px;
+      margin-top: 20px;
+      border: 3px solid $colorPrimary;
+      border-radius: 20px;
+      // opacity: 0;
+      // transition: opacity $durationSlow $timing;
+
+      &::before {
+        content: '';
+        display: none;
+        position: absolute;
+        top: -$triangleDimension;
+        left: calc(50% - #{$triangleDimension});
+        width: 0;
+        height: 0;
+        border-left: $triangleDimension solid transparent;
+        border-right: $triangleDimension solid transparent;
+        border-bottom: $triangleDimension solid $colorPrimary;
+
+        @include respond($break30) {
+          display: inline-block;
+          left: calc(25% - #{$triangleDimension});
+        }
+
+        @include respond($break70) {
+          left: calc((100% / 6) - #{$triangleDimension});
+        }
+      }
+    }
+  }
+}

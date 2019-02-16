@@ -7,7 +7,7 @@ export default props => (
     query={graphql`
       query {
         swapi {
-          allPersons {
+          allPersons(first:20) {
             id
             name
             birthYear

@@ -1,0 +1,6 @@
+.persons {
+  @include listUnstyled;
+  display: flex;
+  flex: flex-grow;
+  flex-flow: row wrap;
+}
