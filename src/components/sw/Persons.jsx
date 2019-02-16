@@ -1,6 +1,7 @@
 import React from "react"
 // import PropTypes from "prop-types"
 import Person from "./Person"
+import { Trail, animated, config } from 'react-spring/renderprops'
 
 export default class Persons extends React.Component {
   constructor(props) {
@@ -23,16 +24,26 @@ export default class Persons extends React.Component {
     return (
       <div>
 		    <ul className="persons">
-          {this.props.data.map((person) => {
-            return (
-              <Person
-                key={person.id}
-                isOpen={!!this.state.openPersons[person.id]}
-                onClick={this.onClick}
-                person={ person }
-              />
-            )
-          })}
+          <Trail
+            native
+            config={config.gentle}
+            items={this.props.data}
+            keys={ item => item.id }
+            from={{ opacity: 0}}
+            to={{ opacity: 1 }}>
+            {item => props => (
+              <animated.li
+                style={props}
+                className="person"
+              >
+                <Person
+                  isOpen={!!this.state.openPersons[item.id]}
+                  onClick={this.onClick}
+                  person={ item }
+                />
+              </animated.li>
+            )}
+          </Trail>
         </ul>
       </div>
     )
