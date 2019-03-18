@@ -101,12 +101,12 @@ hr {
 // --------------------------
 a {
   // Do you want links to transition smoothly between states?
-  // @include transition($duration color $timing);
+  opacity: 1;
+  transition: opacity $duration $timing;
   text-decoration: none;
-  // color: $something;
 
   &:hover {
-    // color: $something;
+    opacity: 0.6;
   }
 
   &:active {

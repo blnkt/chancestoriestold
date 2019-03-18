@@ -1,0 +1,115 @@
+.main-header {
+  @include mainContainer;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .site-title, .site-title a {
+    color: $white;
+
+    &:active, &:focus, &:hover {
+      color: $white;
+    }
+
+    &.active {
+      position: fixed;
+      top: $containerPadding;
+      left: $containerPadding;
+      z-index: 2;
+      @include respond($break70) {
+      }
+    }
+
+    .mobile-only {
+      display: block;
+
+      @include respond($break70) {
+        display: none;
+      }
+    }
+
+    .desktop-only {
+      display: none;
+
+      @include respond($break70) {
+        display: block;
+      }
+    }
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-grow: 1;
+    max-height: 0;
+    // padding: 72px 0 0 0;
+    overflow: hidden;
+    background-color: $colorPrimary;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 26px;
+
+    &.active {
+      max-height: 100vh;
+    }
+
+    @include respond($break70) {
+      position: static;
+      align-items: center;
+      justify-content: right;
+      flex-direction: row;
+      max-height: none;
+      padding: 0 $containerPadding 0 0;
+      font-size: 16px;
+
+      &.active {
+        max-height: none;
+      }
+    }
+
+    .nav-item {
+      display: block;
+      padding: $containerPadding;
+      color: $white;
+
+      @include respond($break70) {
+        padding: 0;
+      }
+
+      + .nav-item {
+        @include respond($break70) {
+          margin-left: $containerPadding;
+        }
+      }
+    }
+  }
+
+  .hamburger-box {
+    display: block;
+    z-index: 2;
+    animation: fadeIn $durationMedium;
+
+    &.active {
+      position: fixed;
+      top: 24px;
+      right: 20px;
+    }
+
+    @include respond($break70) {
+      display: none;
+      animation: fadeOut $durationMedium forwards;
+
+      &.active {
+        position: static;
+      }
+    }
+  }
+}
+

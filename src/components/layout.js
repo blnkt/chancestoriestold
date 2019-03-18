@@ -12,27 +12,26 @@ const Layout = ({ children }) => (
         site {
           siteMetadata {
             title
+            menuLinks {
+              name
+              link
+            }
           }
         }
       }
     `}
     render={data => (
       <>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: `0px 1.0875rem 1.45rem`,
-            paddingTop: 0,
-          }}
-        >
+        <Header siteTitle="Chance Stories Told" siteTitleMobile="CST" menuLinks={data.site.siteMetadata.menuLinks} />
+        <div>
           <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
+          <div className="background-primary">
+            <footer className="main-footer">
+              © {new Date().getFullYear()}, Built with
+              {` `}
+              <a href="https://www.gatsbyjs.org">Gatsby</a>
+            </footer>
+          </div>
         </div>
       </>
     )}

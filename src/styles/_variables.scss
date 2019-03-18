@@ -38,7 +38,7 @@ $colorTertiary: #FF3C5C;
 // $break130: ;
 // $break120: ;
 // $break110: ;
-// $break100: ;
+$break100: 960px;
 // $break90: ;
 // $break80: ;
 $break70: 780px;
@@ -65,13 +65,15 @@ $break30: 480px;
 
 // Measurements
 // --------------------------------------------------------
-// $containerWidth: ∞;
+$containerWidth: $break100;
+$containerPadding: 20px;
 
 $baseLineHeight: 1.4;
 $verticalSpace: $baseLineHeight * 1em;
 
 // $durationFast: 0.1s;
 $duration: 0.2s;
+$durationMedium: 0.4s;
 $durationSlow: 0.6s;
 $timing: ease;
 

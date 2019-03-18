@@ -1,9 +1,23 @@
 module.exports = {
   pathPrefix: "/chancestoriestold",
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Chance Stories Told`,
+    description: `Explorations.`,
+    author: `Blake Mason`,
+    menuLinks: [
+      {
+        name: `home`,
+        link: `/`
+      },
+      {
+        name: `star wars`,
+        link: `/sw`
+      },
+      {
+        name: `iss`,
+        link: `/iss`
+      }
+    ]
   },
   plugins: [
     `gatsby-plugin-sass`,
