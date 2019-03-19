@@ -10,6 +10,10 @@ module.exports = {
         link: `/`
       },
       {
+        name: `about`,
+        link: `/about`
+      },
+      {
         name: `star wars`,
         link: `/sw`
       },

@@ -9,7 +9,6 @@ export default class Tracker extends React.Component {
 //   }
 
   render () {
-    console.log(this.props.data)
     return (
       <div>
         { this.props.data

@@ -17,8 +17,6 @@
       top: $containerPadding;
       left: $containerPadding;
       z-index: 2;
-      @include respond($break70) {
-      }
     }
 
     .mobile-only {
