@@ -18,6 +18,10 @@ module.exports = {
         link: `/sw`
       },
       {
+        name: `NEA Visualization`,
+        link: `/neas`
+      },
+      {
         name: `iss`,
         link: `/iss`
       }
@@ -62,7 +66,7 @@ module.exports = {
       resolve: 'gatsby-source-apiserver',
       options: {
         // Type prefix of entities from server
-        typePrefix: 'iss',
+        typePrefix: 'nasa',
 
         // The url, this should be the endpoint you are attempting to pull data from
         // url: `http://api.open-notify.org/iss-now.json`,
@@ -157,7 +161,7 @@ module.exports = {
             headers: {
             'Content-Type': 'application/json'
             },
-            name: `location`,
+            name: `iss`,
           },
           {
             url: `http://api.open-notify.org/astros.json`,

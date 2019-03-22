@@ -6,13 +6,13 @@ export default props => (
   <StaticQuery
     query={graphql`
       query {
-        isslocation {
+        nasaiss {
           iss_position {
             longitude
             latitude
           }
         },
-        issastros {
+        nasaastros {
           number
           people {
             name

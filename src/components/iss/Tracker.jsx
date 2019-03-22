@@ -14,12 +14,12 @@ export default class Tracker extends React.Component {
         { this.props.data
           ?
             <div>
-                <p>{this.props.data.issastros.number}</p>
-                <p>{this.props.data.issastros.people[0].name}</p>
-                <p>{this.props.data.issastros.people[1].name}</p>
-                <p>{this.props.data.issastros.people[2].name}</p>
-                {/* <p>{this.props.data.isslocation.iss_position.longitude}</p> */}
-                {/* <p>{this.props.data.isslocation.iss_position.latitude}</p> */}
+                <p>{this.props.data.nasaastros.number}</p>
+                <p>{this.props.data.nasaastros.people[0].name}</p>
+                <p>{this.props.data.nasaastros.people[1].name}</p>
+                <p>{this.props.data.nasaastros.people[2].name}</p>
+                {/* <p>{this.props.data.nasaiss.iss_position.longitude}</p> */}
+                {/* <p>{this.props.data.nasaiss.iss_position.latitude}</p> */}
             </div>
           : null
         }
