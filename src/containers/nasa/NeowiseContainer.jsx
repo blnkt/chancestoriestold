@@ -75,10 +75,6 @@ export default class Neas extends React.Component {
         this.fetchNeos();
     }
 
-    componentDidUpdate() {
-        console.log(this.state.neos, this.state.neos.length);
-    }
-
     render () {
         return (
             this.state.loading ?
